@@ -1,0 +1,22 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               'Paulo Lopes'
+tagline:             'A Vert.x Hacker'
+description:         'I’m <em>pmlopes</em> many places, including <a rel="me" href="https://github.com/pmlopes">Github</a>, <a rel="me" href="https://twitter.com/jetdrone">Twitter</a>.'
+url:                 http://pmlopes.github.io
+baseurl:             ''
+paginate:            5
+
+# About/contact
+author:
+  name:              Paulo Lopes
+  url:               https://twitter.com/jetdrone
+  email:             pmlopes@gmail.com
+
+# Custom vars
+version:             1.0.0
