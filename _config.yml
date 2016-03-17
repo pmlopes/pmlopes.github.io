@@ -6,22 +6,31 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Awesome Site Title
-email: your-email@domain.com
+title: Vert.x Hacks
+email: paulo@mlopes.net
 description: >
-  Awesome site description here
+  an appropriate application of ingenuity
 logo: "/assets/images/logo.jpg"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://www.mlopes.net" # the base hostname & protocol for your site
 paginate:	5 # The number of posts to show per page on your homepage
 
-name: 'Your Name'
+name: 'Paulo Lopes'
 bio: >
-  Mea suas vituperatoribus et, virtute corpora quaestio cum ut.
-  Ne solet nostrum complectitur pri, vis ut inani populo.
+  I'm Paulo and I've used my 10+ years of software development experience
+  writing, rewriting, banging my head against the wall, editing and
+  re-editing high-performance web application to make Vert.x an even more
+  awesome framework. I am also the author of "yoke" and other small open
+  source projects. I jump out of bed with a big smile on my face each
+  morning because I know reactive microservices are real and will finally
+  put monoliths and big balls of mud to an end.
+
+  This is more than a job; I'm on a mission to build fast and faster
+  applications!
+
 author_image: "/assets/images/author.jpg"
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: jetdrone
+github_username:  pmlopes
 
 # Build settings
 markdown: kramdown
