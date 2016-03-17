@@ -1,134 +1,246 @@
-# Lanyon
+# Amplify for Jekyll
 
-Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+*A Jekyll html theme in the vague style of Medium.com built using Google AMP*
 
-![Lanyon](https://f.cloud.github.com/assets/98681/1825266/be03f014-71b0-11e3-9539-876e61530e24.png)
-![Lanyon with open sidebar](https://f.cloud.github.com/assets/98681/1825267/be04a914-71b0-11e3-966f-8afe9894c729.png)
+Google's [Accelerated Mobile Pages Project](https://www.ampproject.org/)
+(a.k.a. "Google AMP" or Google ⚡) is an open-source project that defines rules
+for creating websites that load nearly instantly even on mobile devices with
+slow connections.
 
+Check out a live example of this theme at
+[http://ageitgey.github.io/amplify/](http://ageitgey.github.io/amplify/2016/03/08/example-post.html)
+or
+[via Google's CDN](https://cdn.ampproject.org/c/s/ageitgey.github.io/amplify/2016/03/08/example-post.html).
 
-## Contents
+## Screenshot
 
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
+![screenshot](/assets/images/screenshot.png)
 
+## Why use Google AMP?
 
-## Usage
+There are two reasons to use Google AMP:
 
-Lanyon is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
+First, it's really fast! An often cited claim (by Amazon, Yahoo, Walmart and
+others) is that every extra 100ms improvement in page load time increases
+incremental revenue by up to 1%. Your personal blog might not be selling
+anything, but why settle for a slow page and risk losing readers?
 
+Second, Google might feature your AMP page in Search Results! Google gives
+preferential treatment to AMP pages on Mobile Search. When it displays your
+page in the AMP search results widget, it will even serve your page through
+it's own CDN to make the page load even faster. It's similar to how
+[Facebook Instant Articles](https://instantarticles.fb.com/) works on the
+Facebook platform.
 
-## Options
+## How fast is this theme?
 
-Lanyon includes some customizable options, typically applied via classes on the `<body>` element.
+To get a general idea of how this theme performs, let's compare this page
+hosted on Github vs. another static page hosted on Github. We can use
+https://facebook.github.io/react/ as a comparison page. I've also included
+https://jekyllrb.com/ as another point of comparison (it's also hosted on
+Github).
 
+Of course our page and these other pages have different
+layouts. But the main point is that they are typical static sites hosted
+on Github and are well-designed. So it should give us a rough idea of how
+other typical pages might perform. I'm not suggesting anything
+is wrong with these other pages. They are actually pretty fast!
 
-### Sidebar menu
+If you are on a fast connection, all these pages load about the same speed
+but our page renders the main content much faster:
 
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
+#### First page visit with no throttling
+
+| Page                                                            | DOMContentReady | Load   |
+| -------------                                                   |:-----------:    | ------:|
+| https://facebook.github.io/react/                               | 1.7s            | 1.89s  |
+| https://jekyllrb.com/                                           | 500ms           | 909ms  |
+| https://ageitgey.github.io/amplify/2016/03/08/example-post.html | 61ms!           | 1.06s  |
+
+#### Second page visit with no throttling
+
+| Page                                                            | DOMContentReady | Load   |
+| -------------                                                   |:-----------:    | ------:|
+| https://facebook.github.io/react/                               | 1.08s           | 1.33s  |
+| https://jekyllrb.com/                                           | 212ms           | 486ms  |
+| https://ageitgey.github.io/amplify/2016/03/08/example-post.html | 66ms!           | 1.03s  |
+
+You'll see the main content render much faster because AMP
+[doesn't allow anything in your page](https://www.ampproject.org/docs/get_started/technical_overview.html)
+that would block the page from rendering after the initial HTML loads. This means no external
+css, no custom js, etc.
+
+Here's how this looks to the user (as rendered by [WebPageTest](http://www.webpagetest.org/)):
+
+![screenshot](/assets/images/speed.png)
+
+You can get sometimes get even faster speeds when your
+[page is served via Google's AMP CDN](https://cdn.ampproject.org/c/s/ageitgey.github.io/amplify/2016/03/08/example-post.html).
+But that's not always true depending the randomness of the internet and where
+you are connecting from.
+
+So there's some tiny benefit on a 100mbs wired connection. But optimization is much more
+important on a slow, high-latency mobile connection (i.e. most actual internet users in 2016).
+Let's try loading the page using the "Regular 2G (250kb/s, 300ms RT)" throttling setting in
+Chrome Dev Tools:
+
+#### First page visit with "Regular 2G" throttling
+
+| Page                                                            | DOMContentReady | Load   |
+| -------------                                                   |:-----------:    | ------:|
+| https://facebook.github.io/react/                               | 28.50s          | 29.39s |
+| https://jekyllrb.com/                                           | 1.75s           | 7.03s  |
+| https://ageitgey.github.io/amplify/2016/03/08/example-post.html | 530ms!          | 5.07s  |
+
+#### Second page visit with "Regular 2G" throttling
+
+| Page                                                            | DOMContentReady | Load   |
+| -------------                                                   |:-----------:    | ------:|
+| https://facebook.github.io/react/                               | 2.02s           | 2.55s  |
+| https://jekyllrb.com/                                           | 392ms           | 791ms  |
+| https://ageitgey.github.io/amplify/2016/03/08/example-post.html | 385ms!          | 1.64s  |
+
+Even a horribly slow connection with high latency, the user will still see a page render in
+half a second. That's great! The difference between 385ms and 28s is the different between
+someone reading your blog is skipping your blog.
+
+But notice that the Jekyll homepage still performs well on the second page load. Google AMP
+gives you a nice set of rules for making fast pages, but of course it isn't required to make
+a fast page.
+
+## Getting Started
+
+To use this theme, it's just like using any other Jekyll template:
+
+*Step 1:* [Install Jekyll](https://jekyllrb.com/docs/installation/)
+
+*Step 2:* Clone this repo to your computer
+
+```bash
+git clone git@github.com:ageitgey/amplify.git
+```
+
+*Step 3:* Run `gem install bundler; bundle install` inside the new `/amplify/` folder that was 
+just created to install the required ruby dependencies.
+
+*Step 4:* Tweak `_config.yml`.
+
+Just fill in everything in the `# Site settings` section.
+You'll want to set your site's title, your name, your twitter username, etc.
+
+*Step 5:* Run `jekyll serve` and then open
+[http://localhost:4000/](http://localhost:4000/) to see your site!
+
+*Step 6:* Publish your site
+[just like any other Jekyll site](https://jekyllrb.com/docs/deployment-methods/).
+
+## Google AMP Limitations
+
+Google AMP sets many
+[strict limits on what you can include in your web pages](https://www.ampproject.org/docs/get_started/technical_overview.html).
+A few of these are worth talking about:
+
+*Limitation: All CSS must be inline (no external css files).*
+
+Because of this, the main css file for this site is in `_includes/styles.scss`
+instead of in the normal `css/` Jekyll folder. This css file is inlined
+into the header of every page via the special `scssify` filter in `_includes/head.html`.
+
+*Limitation: Size all resources statically*
+
+Every image you include in your page *must* have a height and width. This also
+applies to other things like embedding videos or other resources. Check below
+for more details.
+
+## Writing Posts with Google AMP
+
+Writing posts works
+[just like it does normally in Jekyll](https://jekyllrb.com/docs/posts/)
+except when you want to include extra resources likes pictures, videos,
+embedded Twitter posts, etc.
+
+Google AMP has it's own set of special html tags for including content. You
+should use these instead of normal Markdown or HTML tags.
+
+The two you are are most likely to need are `<amp-img>` and `<amp-youtube>`:
+
+### Images in your posts
 
 ```
----
-layout: page
-title: About
----
+<amp-img width="600" height="300" layout="responsive" src="/assets/images/your_picture.jpg"></amp-img>
 ```
 
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
+### Youtube Videos in your posts
 
-
-### Themes
-
-Lanyon ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
-
-![Lanyon with red theme](https://f.cloud.github.com/assets/98681/1825270/be065110-71b0-11e3-9ed8-9b8de753a4af.png)
-![Lanyon with red theme and open sidebar](https://f.cloud.github.com/assets/98681/1825269/be05ec20-71b0-11e3-91ea-a9138ef07186.png)
-
-There are eight themes available at this time.
-
-![Available theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
-
-To use a theme, add any one of the available theme classes to the `<body>` element in the `default.html` layout, like so:
-
-```html
-<body class="theme-base-08">
-  ...
-</body>
+```
+<amp-youtube data-videoid="lBTCB7yLs8Y" layout="responsive" width="480" height="270"></amp-youtube>
 ```
 
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/lanyon/blob/master/public/css/lanyon.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
+### Embedding other types of content
 
+The AMP Project provides helpers for many other types of content like audio,
+ads, Google Analytics, etc.
 
-### Reverse layout
+* Built-in AMP tags:
+ * https://github.com/ampproject/amphtml/blob/master/builtins/README.md
 
-![Lanyon with reverse layout](https://f.cloud.github.com/assets/98681/1825265/be03f2e4-71b0-11e3-89f1-360705524495.png)
-![Lanyon with reverse layout and open sidebar](https://f.cloud.github.com/assets/98681/1825268/be056174-71b0-11e3-88c8-5055bca4307f.png)
+* Extended AMP tags:  
+ * https://github.com/ampproject/amphtml/blob/master/extensions/README.md
 
-Reverse the page orientation with a single class.
+## Validating your page with Google AMP
 
-```html
-<body class="layout-reverse">
-  ...
-</body>
+Google AMP adds built-in validation logic to make sure your pages follow all
+the rules so they render as fast as possible.
+
+To check your page, just add `#development=1` to any url on your site and then
+check the javascript console in your browser.
+
+http://localhost:4000/#development=1
+
+You will either see a success message:
+
+```
+Powered by AMP ⚡ HTML – Version 1457112743399
+AMP validation successful.
 ```
 
+Or you will see a list of errors to fix:
 
-### Sidebar overlay instead of push
-
-Make the sidebar overlap the viewport content with a single class:
-
-```html
-<body class="sidebar-overlay">
-  ...
-</body>
+```
+Powered by AMP ⚡ HTML – Version 1457112743399
+AMP validation had errors:
+The attribute 'style' may not appear in tag 'span'
+The attribute 'style' may not appear in tag 'div'
 ```
 
-This will keep the content stationary and slide in the sidebar over the side content. It also adds a `box-shadow` based outline to the toggle for contrast against backgrounds, as well as a `box-shadow` on the sidebar for depth.
+## Making Google serve your page
 
-It's also available for a reversed layout when you add both classes:
+Google will cache valid AMP pages if you link to them with one of these urls:
 
-```html
-<body class="layout-reverse sidebar-overlay">
-  ...
-</body>
-```
+`https://cdn.ampproject.org/c/s/<your page url here>`
 
-### Sidebar open on page load
+Or:
 
-Show an open sidebar on page load by modifying the `<input>` to add the `checked` boolean attribute:
+`https://amp.gstatic.com/c/s/<your page url here>`
 
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
-```
+But keep in mind these two limitations:
 
-Using Liquid you can also conditionally show the sidebar open on a per-page basis. For example, here's how you could have it open on the homepage only:
+1. The caches don't refresh that often. So don't view these urls until your page
+   is done!
+2. Remove `/s` from both urls if your page isn't served over `https://`.
 
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.title =="Home" %}checked{% endif %}>
-```
+## Required Schema Data
 
-## Development
+To actually get your page featured in Google search results, it needs to include
+a http://schema.org NewsArticle schema. See `_includes/metadata.json` for the
+version generated by default. You might want to tweak it.
 
-Lanyon has two branches, but only one is used for active development.
+## Credits
 
-- `master` for development.  **All pull requests should be to submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
-
+This theme is inspired by
+[Mediator by Dirk Fabisch](https://github.com/dirkfabisch/mediator). I used some
+of the css and html from that theme as a starting point. Thanks!
 
 ## License
 
-Open sourced under the [MIT license](LICENSE.md).
-
-<3
+MIT. See LICENSE file in repo.
