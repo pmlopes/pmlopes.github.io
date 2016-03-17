@@ -10,7 +10,7 @@ title: Vert.x Hacks
 email: paulo@mlopes.net
 description: >
   an appropriate application of ingenuity
-logo: "/assets/images/logo.jpg"
+logo: "assets/images/logo.jpg"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.mlopes.net" # the base hostname & protocol for your site
 paginate:	5 # The number of posts to show per page on your homepage
@@ -28,7 +28,7 @@ bio: >
   This is more than a job; I'm on a mission to build fast and faster
   applications!
 
-author_image: "/assets/images/author.jpg"
+author_image: "assets/images/author.jpg"
 twitter_username: jetdrone
 github_username:  pmlopes
 
