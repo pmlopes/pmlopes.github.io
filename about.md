@@ -4,29 +4,30 @@ title: About
 permalink: /about/
 ---
 
-<amp-img width="600" height="300" layout="responsive" src="http://lorempixel.com/600/300/sports"></amp-img>
+This blog helps you exploring [Vert.x](http://vertx.io), a tool-kit for building reactive applications on the JVM. I'll
+try to explain everything in simple terms and add use cases to clarify my ideas.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac augue libero.
-Fusce ac tempor dolor. Ut est dui, gravida a consequat aliquet, fermentum
-sodales risus. Suspendisse eu arcu id mi ornare facilisis non id nisl. Maecenas
-nec congue arcu, non semper neque. Proin mollis nisl diam, eu ultrices diam
-facilisis et. Integer fringilla lorem quis semper venenatis.
+A few things you should know when reading this blog:
 
-Aliquam vestibulum purus enim. Sed rhoncus interdum erat id consequat. Nulla
-cursus venenatis massa, quis convallis lacus condimentum vel. Etiam mollis,
-orci ac pharetra commodo, diam lectus hendrerit eros, ac elementum magna augue
-sed tellus. Maecenas molestie, nisi ut sodales scelerisque, purus neque
-imperdiet dui, mollis elementum sem augue vel ipsum. Nulla lacinia arcu at quam
-lobortis, vitae interdum tellus fermentum. Cum sociis natoque penatibus et
-magnis dis parturient montes, nascetur ridiculus mus. Fusce sodales semper erat,
-eu fringilla ligula vulputate id. Maecenas quis libero pellentesque lacus
-egestas vehicula sit amet et neque. Nulla nec facilisis sem. Pellentesque rutrum
-elementum molestie. Quisque eget dui ac quam placerat dictum. Suspendisse quis
-ante placerat, efficitur enim ut, commodo tortor. Etiam consequat, eros quis
-consequat congue, augue mauris molestie libero, sed iaculis lectus enim eu magna.
+### Opinion and credit
 
-Etiam sapien dolor, mattis vel feugiat nec, egestas eget risus. Lorem ipsum
-dolor sit amet, consectetur adipiscing elit. Aenean aliquam massa a est porta
- vehicula. Cras eu gravida massa. Integer non sem ac mi ultrices posuere a
- pretium tortor. Mauris vitae varius sem. Praesent faucibus nec felis et dictum.
- Vestibulum lorem velit, laoreet nec vestibulum in, varius nec enim.
+Everything I write or publish is entirely my own opinion not my employer. I won't publish anything that doesn't fit mine
+or this blog's views.
+
+If I post work created by others, I'll always try to find the right source and link it underneath. If I'm unable to
+track the rightful owner, I'll link to the location where I've found it. If something's yours and you want me to adjust
+the credit or even remove the piece, please send me an e-mail and I will get back to you as soon as I possibly can.
+
+Always remember: the reason I've posted your work is because I admire it and think it deserves more exposure.
+
+### Language
+
+I'm not a native English speaker and I don't leave in a English speaking country, so switching to English can be quite a
+challenge. Should you notice a horrible spelling mistake, PLEASE notify me about it so I can save myself from any
+further embarrassment. I won't think of you as an annoying grammar nazi, I swear.
+
+### Frequency
+
+I blog whenever I feel like it, and if nothing appears for a week or two, that's ok. (At least, if I didn't get run over
+by a bus or taken down by angry pigeons. If you're worried about any absence that may occur, you can always send me an
+e-mail and I will happily notify you about my health status.)
