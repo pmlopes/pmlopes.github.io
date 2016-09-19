@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Vert.x on Microsoft Azure Tutorial
+date: 2016-03-15 09:00:00 GMT
 ---
 
 Vert.x plays fine on Microsoft Azure. Want to see how?

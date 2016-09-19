@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Microservices were never so easy with Vert.x
+date: 2016-06-03 09:00:00 GMT
 ---
 
 This talk will be more hands on talk with examples of microservices in Vert.x, and demonstrating how easy it is.

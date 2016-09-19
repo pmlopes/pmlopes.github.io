@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Let’s build a scalable async Vert.x app in < 60 min
+date: 2016-09-07 09:00:00 GMT
 ---
 
 Async programming is here to stay, it has proven that it can handle the load modern applications demand. Starting with async programming can be a total mind shift, once you add scaling to the equation it can get really complex! But why does it need to be so complicated?
@@ -9,4 +10,4 @@ Reactive systems are one answer, however, today we're looking for web-scale, and
 
 This session explains how the simple model promoted by Vert.x enables the construction of concurrent, scalable and efficient reactive based applications.
 
-<amp-vimeo data-videoid="27246366" layout="responsive" width="480" height="270"></amp-vimeo>
+<amp-vimeo data-videoid="181905280" layout="responsive" width="480" height="270"></amp-vimeo>
