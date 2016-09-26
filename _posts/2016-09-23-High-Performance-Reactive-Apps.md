@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Let’s build a scalable async Vert.x app in < 60 min
+title: Reative Distributed Apps with Vert.x 3
 date: 2016-09-23 17:15:00 GMT
 ---
 
