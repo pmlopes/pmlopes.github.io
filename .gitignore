@@ -41,3 +41,7 @@ validation-report.json
 node_modules
 bower_components
 pmlopes.github.io
+.sass-cache
+
+# Other files
+Gemfile.lock
