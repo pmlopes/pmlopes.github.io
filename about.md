@@ -18,7 +18,7 @@ Always remember: the reason I've posted your work is because I admire it and thi
 
 ### Language
 
-I'm not a native English speaker and I don't leave in a English speaking country, so switching to English can be quite a challenge. Should you notice a horrible spelling mistake, PLEASE notify me about it so I can save myself from any further embarrassment. I won't think of you as an annoying grammar nazi, I swear.
+I'm not a native English speaker and I don't live in a English speaking country, so switching to English can be quite a challenge. Should you notice a horrible spelling mistake, PLEASE notify me about it so I can save myself from any further embarrassment. I won't think of you as an annoying grammar nazi, I swear.
 
 ### Frequency
 
