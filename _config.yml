@@ -32,8 +32,6 @@ markdown: kramdown
 kramdown:
   parse_block_html: true
 
-gems:
-  - jekyll-paginate
-
 plugins:
+  - jekyll-paginate
   - jekyll-sitemap
