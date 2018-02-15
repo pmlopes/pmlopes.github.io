@@ -12,7 +12,7 @@ description: >
   an appropriate application of ingenuity
 logo: "assets/images/logo.jpg"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.jetdrone.xyz" # the base hostname & protocol for your site
+url: "https://www.jetdrone.xyz" # the base hostname & protocol for your site
 paginate:	5 # The number of posts to show per page on your homepage
 
 name: 'Paulo Lopes'
