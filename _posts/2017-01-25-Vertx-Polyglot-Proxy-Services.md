@@ -8,7 +8,7 @@ Vert.x offers developers a simple way to define service interfaces with its [Ser
 
 Until now this protocol was only implemented in Java so all the polyglot users would not benefit from it, but was this a limitation?
 
-No, just because the contract is a Java interface it does not mean that it cannot be implemented by any other language. For example say that you have the contract:
+No, just because the contract is a Java interface it does not mean that it cannot be implemented by any other language. For example, say that you have the contract:
 
 ```java
 @VertxGen
