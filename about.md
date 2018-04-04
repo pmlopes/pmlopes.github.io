@@ -10,7 +10,7 @@ A few things you should know when reading this blog:
 
 ### Opinion and credit
 
-Everything I write or publish is entirely my own opinion not my employer. I won't publish anything that doesn't fit mine or this blog's views.
+Everything I write or publish is entirely my own opinion, not my employer. I won't publish anything that doesn't fit mine or this blog's views.
 
 If I post work created by others, I'll always try to find the right source and link it underneath. If I'm unable to track the rightful owner, I'll link to the location where I've found it. If something's yours and you want me to adjust the credit or even remove the piece, please send me an e-mail and I will get back to you as soon as I possibly can.
 
@@ -18,7 +18,7 @@ Always remember: the reason I've posted your work is because I admire it and thi
 
 ### Language
 
-I'm not a native English speaker and I don't live in a English speaking country, so switching to English can be quite a challenge. Should you notice a horrible spelling mistake, PLEASE notify me about it so I can save myself from any further embarrassment. I won't think of you as an annoying grammar nazi, I swear.
+I'm not a native English speaker and I don't live in an English speaking country, so switching to English can be quite a challenge. Should you notice a horrible spelling mistake, PLEASE notify me about it so I can save myself from any further embarrassment. I won't think of you as an annoying grammar nazi, I swear.
 
 ### Frequency
 
