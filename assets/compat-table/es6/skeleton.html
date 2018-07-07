@@ -7,7 +7,7 @@
     <title>ECMAScript 6 compatibility table</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,600">
     <link rel="stylesheet" href="../master.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../master.js"></script>
     <script>
       var __script_executed = {};
@@ -140,7 +140,18 @@
     <div id="footnotes">
       <div id="create-iterable-object">
         <code>__createIterableObject()</code>, used in the numerous "generic iterables" tests, is defined as:
-        <script>document.write("<pre>" + __createIterableObject + "</pre>");</script>
+		<pre>
+			<script>
+				var thisScript = document.currentScript || document.scripts[document.scripts.length-1];
+				var pre = thisScript.parentNode;
+
+                if ("textContent" in pre) {
+                  pre.textContent = "" + __createIterableObject;
+                } else {
+                  pre.innerText = "" + __createIterableObject;
+                }
+			</script>
+		</pre>
       </div>
       <!-- FOOTNOTES -->
     </div>

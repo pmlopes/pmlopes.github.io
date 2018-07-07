@@ -5,6 +5,11 @@ var _gaq = [
 ];
 // jshint ignore:end
 
+
+if (!document.scripts) { // Create "live list" for all scripts if it doesn't exist
+  document.scripts = document.getElementsByTagName("script");
+}
+
 (function() {
   var ga = document.createElement('script');
   ga.type = 'text/javascript';
@@ -17,21 +22,40 @@ var _gaq = [
 
 window.test = function(expression) {
   var result = (typeof expression === "string" ? expression : !!expression ? 'Yes' : 'No');
-  document.write('<td class="' + result.toLowerCase() + ' current">' + result + '</td><td></td>');
-};
 
-document.write('<style>td:nth-of-type(2) { outline: #aaf solid 3px; }</style>');
+  // Last SCRIPT in the document is the one currently executing
+  var thisScript = document.currentScript || document.scripts[document.scripts.length-1];
+
+  var td = thisScript.parentNode;
+  var tr = td.parentNode;
+
+  // Insert the two new TD elements after the one that contains the SCRIPT
+  td = tr.insertBefore(document.createElement("td"), td.nextSibling);
+  td.className = result.toLowerCase() + " current";
+
+  if ("textContent" in td) {
+    td.textContent = result;
+  } else {
+    td.innerText = result;
+  }
+
+  tr.insertBefore(document.createElement("td"), td.nextSibling);
+};
 
 // For async tests, this returned function is used to set results
 // instead of returning true/false.
 function makeAsyncPassedFn(className, textContent) {
   return function(rowNum) {
     return function() {
-      var elem = $("#table-wrapper tbody tr:not(.category)").eq(+rowNum).children(".current")[0];
-      elem.className = className;
-      elem.textContent = textContent;
+      var elem = $("#table-wrapper tbody tr:not(.category)")
+        .eq(+rowNum)
+        .children(".current")
+        .first()
+        .prop("className", className)
+        .text(textContent);
+
       if (window.__updateHeaderTotal) {
-        $(elem).parent().prevAll('.supertest').first().each(window.__updateSupertest);
+        elem.parent().prevAll('.supertest').first().each(window.__updateSupertest);
         $('th.current').each(window.__updateHeaderTotal);
       }
     };
@@ -45,17 +69,16 @@ $(function() {
   var table = $('#table-wrapper');
   var currentBrowserSelector = ":nth-of-type(2)";
   var thead = $('thead');
-  
-  if (thead.css('position') === "-webkit-sticky") {
-    // Remove floatThead when native position:sticky is usable.
-    // Currently, only Safari (which floatThead incidentally does not support),
-    // and its -webkit-sticky prefix, works correctly with <thead>.
-    $.fn.floatThead = function() { return this };
-  }
 
   // position: sticky is implemented in chrome but buggy. currently makes the background transparent sometimes
   if (thead.css('position') === "sticky" && window.chrome) {
     thead.css('position', 'static');
+  }
+
+  if (thead.css('position') === "sticky" ||
+    thead.css('position') === "-webkit-sticky") {
+    // Remove floatThead when native position:sticky is usable.
+    $.fn.floatThead = function() { return this };
   }
 
   var initFloatingHeaders = function() {
@@ -466,7 +489,7 @@ $(function() {
     if (!ordering[sortAttr]) {
       // Sort the platforms
 
-      var cells = [].slice.call($('th.platform')).sort(function(a, b) {
+      var cells = $('th.platform').toArray().sort(function(a, b) {
         return sortSpec.order * (parseFloat(b.getAttribute(sortAttr)) - parseFloat(a.getAttribute(sortAttr)));
       });
       ordering[sortAttr] = $.map(cells, platformOf);
@@ -482,7 +505,7 @@ $(function() {
     // Now sort the columns using the comparison function
     table.detach().find('tr').each(function(i, row) {
 
-      var cells = [].slice.call(row.cells, 3).sort(comparator);
+      var cells = $(row.cells).slice(3).toArray().sort(comparator);
 
       for (var j = 0, jlen = cells.length; j < jlen; j++) {
         row.appendChild(cells[j]);
