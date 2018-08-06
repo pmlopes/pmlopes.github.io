@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Run your JavaScript server apps 700% faster!
+title: Run your JavaScript server 700% faster!
 date: 2018-08-06 12:00:00 GMT
 draft: false
 ---
