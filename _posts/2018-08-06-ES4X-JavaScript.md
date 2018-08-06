@@ -20,7 +20,7 @@ As a developer I like a good challenge, so I went with option `B`. After many co
 
 Of course this didn't come out with out many support questions to the very friendly and helpful Graal team.
 
-So we're now at `release candidate 5` and all the issues I've reported and asked have been fixed and I am happy to announce that we can run **ES4X Vert.x** application on Graal without issues. In order to verify that things are fine I've implemented the [Techempower Web Framework Benchmark](https://www.techempower.com/benchmarks/) to see if Graal and ES4X would live to the expectations. May said that Graal was [fast](https://www.forbes.com/sites/oracle/2018/04/18/graalvm-1-0-gives-developers-a-speedy-polyglot-runtime-and-helps-twitter-save-money) but we always need to double check ;-)
+So we're now at `release candidate 5` and all the issues I've reported and asked have been fixed and I am happy to announce that we can run **ES4X Vert.x** application on Graal without issues. In order to verify that things are fine I've implemented the [Techempower Web Framework Benchmark](https://www.techempower.com/benchmarks/) to see if Graal and ES4X would live to the expectations. Many said that Graal was [fast](https://www.forbes.com/sites/oracle/2018/04/18/graalvm-1-0-gives-developers-a-speedy-polyglot-runtime-and-helps-twitter-save-money) but we always need to double check ;-)
 
 ## The Benchmark
 
