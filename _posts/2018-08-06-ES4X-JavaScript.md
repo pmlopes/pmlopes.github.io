@@ -1,7 +1,7 @@
 ---
 layout: post
-title: GraalVM **THE** runtime for your JavaScript server apps!
-date: 2018-08-06 16:00:00 GMT
+title: Run your JavaScript server apps 700% faster!
+date: 2018-08-06 12:00:00 GMT
 draft: false
 ---
 
@@ -26,14 +26,7 @@ So we're now at `release candidate 5` and all the issues I've reported and asked
 
 In order to quickly compare how things work I've took the [current](https://github.com/TechEmpower/FrameworkBenchmarks/tree/12813e17af4d841cea4c6d5f017eabc1e57b0611/frameworks/JavaScript/nodejs) `nodejs` implementation **AS IS** and run the benchmark:
 
-|                  | json    | db     | queries | fortunes | updates | plaintext |
-| ---------------- | ------- | ------ | ------- | -------- | ------- | --------- |
-| requests in 1min | 4485775 | 351199 | 545688  | 410034   | 207947  | 5803708   |
-| requests in 1min | 4581458 | 424491 | 127459  | 443958   | 45839   | 8862879   |
-| requests in 1min | 4584105 | 466896 | 66057   | 475611   | 23404   | 8841142   |
-| requests in 1min | 4636149 | 509371 | 43483   | 501849   | 15613   | 8831023   |
-| requests in 1min | 4623258 | 544755 | 32366   | 501686   | 11877   |           |
-| requests in 1min | 4577783 | 544863 |         |          |         |           |
+![nodejs-benchmark-201808](/assets/images/blog/nodejs-benchmark-201808.png)
 
 * For details on the tests see the [techempower site](https://www.techempower.com/benchmarks/#section=code).
 
@@ -41,14 +34,7 @@ And then I've [implemented](https://github.com/reactiverse/es4x/tree/develop/exa
 
 When the implementation above is run I've got:
 
-|                  | json    | db      | queries | fortunes | updates | plaintext |
-| ---------------- | ------- | ------- | ------- | -------- | ------- | --------- |
-| requests in 1min | 7200621 | 745994  | 1336536 | 396406   | 671466  | 24794384  |
-| requests in 1min | 7193445 | 862764  | 363914  | 398139   | 204794  | 23283488  |
-| requests in 1min | 7959525 | 953472  | 189393  | 434055   | 134405  | 23173456  |
-| requests in 1min | 8424036 | 1067111 | 133491  | 481231   | 110602  | 23203120  |
-| requests in 1min | 8666016 | 1215485 | 101816  | 496435   | 40168   |           |
-| requests in 1min | 8717181 | 1347345 |         |          |         |           |
+![vertx-es4x-benchmark-201808](/assets/images/blog/vertx-es4x-benchmark-201808.png)
 
 **Notes:** The start command for this run was:
 
@@ -77,13 +63,6 @@ These results are **amazing**, it shows that running your server side code with 
 
 Here are the final results as `ES4X / NodeJS`:
 
-| ES4X / NodeJS | json    | db      | queries | fortunes | updates | plaintext |
-| ------------- | ------- | ------- | ------- | -------- | ------- | --------- |
-|               | 1.605   | 2.124   | 2.449   | 0.966    | 3.229   | 4.272     |
-|               | 1.570   | 2.032   | 2.855   | 0.897    | 4.468   | 2.627     |
-|               | 1.736   | 2.042   | 2.867   | 0.913    | 5.743   | 2.621     |
-|               | 1.817   | 2.095   | 3.067   | 0.959    | 7.084   | 2.627     |
-|               | 1.874   | 2.231   | 3.146   | 0.990    | 3.382   |           |
-|               | 1.904   | 2.472   |         |          |         |           |
+![es4x-vs-nodejs-benchmark-201808](/assets/images/blog/es4x-vs-nodejs-benchmark-201808.png)
 
 So if you're doing server side **JavaScript**, think again when bluntly you nod along with *node is fast*!
