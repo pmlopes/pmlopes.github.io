@@ -9,7 +9,7 @@ During this year *Face-2-Face* meeting of the [Eclipse Vert.x](https://vertx.io)
 
 > The goals of this project is to offer a NPM development approach first, instead of a java project based approach. This should make the entry level for JavaScript developers quite low, if they are coming from a nodejs background.
 
-Flashforward a few months later and [Oracle](https://oracle.com) open sourced the project [GraalVM](http://http://www.graalvm.org/). The project quickly got my attention and intrigued me with it's **Polyglot** aspect. After going through the [docs](http://www.graalvm.org/docs/reference-manual/polyglot/) it became obvious that **ES4X** should have support for this.
+Flashforward a few months later and [Oracle](https://oracle.com) open sourced the project [GraalVM](http://www.graalvm.org/). The project quickly got my attention and intrigued me with it's **Polyglot** aspect. After going through the [docs](http://www.graalvm.org/docs/reference-manual/polyglot/) it became obvious that **ES4X** should have support for this.
 
 I was faced with the decision:
 
