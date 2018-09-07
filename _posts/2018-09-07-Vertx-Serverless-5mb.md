@@ -152,7 +152,19 @@ You can verify it using the web frontend usually running at `http://localhost:80
 
 ## Play with it
 
-Either `cURL`, or use your browser at `http://localhost:8080/function/callme`.
+Either `cURL`, `httpie` or use your browser at `http://localhost:8080/function/callme`.
+
+```
+http http://127.0.0.1:8080/function/callme
+HTTP/1.1 200 OK
+Content-Length: 3
+Content-Type: text/plain; charset=utf-8
+Date: Fri, 07 Sep 2018 12:54:03 GMT
+X-Call-Id: a2978cfb-33de-48aa-bc1e-75d370834e87
+X-Start-Time: 1536324843677727462
+
+Hi!
+```
 
 Have fun!
 
