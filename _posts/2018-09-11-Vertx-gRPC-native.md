@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Vert.x native image with gRPC?
+title: gRPC Vert.x native image? Yes you can!
 date: 2018-09-11 12:00:00 GMT
 draft: false
 ---
