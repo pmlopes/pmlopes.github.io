@@ -25,6 +25,7 @@ bio: >
 author_image: "/assets/images/author.jpg"
 twitter_username: pml0pes
 github_username:  pmlopes
+gplus_username:   PauloLopesX
 
 # Build settings
 markdown: kramdown
@@ -35,3 +36,4 @@ kramdown:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag
