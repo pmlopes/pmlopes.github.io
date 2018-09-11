@@ -93,7 +93,7 @@ And you will end up with a 18MB binary.
 
 ### Writing a client
 
-Of course we'll need a client too, so here's the what you need:
+Of course we'll need a client too, so here's what you need:
 
 ```java
 ManagedChannel channel = VertxChannelBuilder
