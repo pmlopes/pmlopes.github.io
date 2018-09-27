@@ -69,7 +69,7 @@ For the *untrained* java developer eye, there is lots of *indentation* making it
 
 ## I Promise it will be easy!
 
-With `ES6` JavaScript gained a new type [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). The **Promise** object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value. The spec for `Promise` is quite simple so `ES4X` has it available event when you're using `Nashorn` (Which means only `ES5.1` is supported).
+With `ES6` JavaScript gained a new type [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). The **Promise** object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value. The spec for `Promise` is quite simple so `ES4X` has it available even when you're using `Nashorn` (Which means only `ES5.1` is supported).
 
 Promises will make your code a bit more readable by chaining calls to: `then()`, `catch()` and `finally()` instead of large callbacks and more indentation.
 
