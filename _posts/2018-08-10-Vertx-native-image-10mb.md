@@ -68,7 +68,7 @@ This is a very simple application and in fact this is **exactly** how you would 
 
 ## Build it
 
-Building the code is trivial, but building the image turned out to have some issues. Luckyly the issues are simple and can all be addressed with a simple [substitution json file](https://github.com/reactiverse/es4x/blob/develop/vertx-scripts/.substitutions.java).
+Building the code is trivial, but building the image turned out to have some issues. Luckyly the issues are simple and can all be addressed with a simple [substitution java file](https://github.com/pmlopes/vertx-starter/blob/master/templates/graal-nativeimage/src/main/svm/substitutions.java).
 
 So building the native image was as simple as:
 
