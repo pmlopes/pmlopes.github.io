@@ -7,6 +7,8 @@ draft: false
 
 I've been working with [GraalVM](http://graalvm.org) for a while now mostly on the [Polyglot](https://reactiverse.io/es4x/) aspect, but some work has been done in the [native image](https://github.com/eclipse/vert.x/pull/2526) support. Today I'd like to share what it is possible right now, *spoiler*: run a Docker image with **size** of **38MB** and **10MB** of **RAM**!
 
+**Russian translation of this article is available** [here](http://softdroid.net/vertx-rodnoy-imidzh-potryasayushchiy).
+
 ## A bit of history
 
 With the 3.x series of Eclipse Vert.x lots of work was done to reduce the ammount of *Classloaders*, *Reflection magic* (this is why there are no annotations, for example). This usually is seen as a contra sense in the java world, but it paid off, as we can already do some amazing stuff without having to thinkering much on hacks or workarounds to circunvent the [substrate limitations](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md).
