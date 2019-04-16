@@ -50,7 +50,16 @@ Enabling security services will require that the dll `libsunec` is available in 
 cp $GRAALVM_HOME/jre/lib/amd64/libsunec.so libsunec.so
 ```
 
-This will allow you to use SSL/Security functions.
+This will allow you to use SSL/Security functions. But the application will still not run:
+
+
+```
+Caused by: io.netty.handler.codec.DecoderException:
+    java.lang.RuntimeException: Unexpected error:
+        java.security.InvalidAlgorithmParameterException:
+            the trustAnchors parameter must be non-empty
+...
+```
 
 ### Step 3
 
