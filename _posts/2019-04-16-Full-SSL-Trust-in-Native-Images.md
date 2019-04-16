@@ -79,6 +79,9 @@ Yet this won't work because the files will not be read from the expected locatio
 ./dad-jokes \
   -Djavax.net.ssl.trustStore=./cacerts \
   -Djavax.net.ssl.trustAnchors=./cacerts
+
+
+A doll was recently found dead in a rice paddy. It's the only known instance of a nick nack paddy wack.
 ```
 
 And *voilá* it works!
