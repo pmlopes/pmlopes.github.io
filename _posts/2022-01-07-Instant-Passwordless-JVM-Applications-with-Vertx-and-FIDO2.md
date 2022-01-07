@@ -40,7 +40,7 @@ the severity of the problem.
 Sadly this is just a scratch of the top of the iceberg. Probably there's a breach happening right now and the list will never end.
 
 In this conference you will learn a lot about FIDO2. I'll leave it's details to other speakers. If you want to know more
-I'd recommend you to visit the https://fidoalliance.org/fido2 website.
+I'd recommend you to visit the [https://fidoalliance.org/fido2](https://fidoalliance.org/fido2) website.
 
 <amp-youtube data-videoid="E2S-gYdNnuo" layout="responsive" width="480" height="270"></amp-youtube>
 
@@ -130,6 +130,6 @@ public class MainVerticle extends AbstractVerticle {
 
 ### Links
 
-* https://github.com/pmlopes/authenticatecon
-* https://vertx.io/
-* https://github.com/vert-x3/vertx-auth/tree/master/vertx-auth-webauthn
+* [https://github.com/pmlopes/authenticatecon](https://github.com/pmlopes/authenticatecon)
+* [https://vertx.io/](https://vertx.io/)
+* [https://github.com/vert-x3/vertx-auth/tree/master/vertx-auth-webauthn](https://github.com/vert-x3/vertx-auth/tree/master/vertx-auth-webauthn)

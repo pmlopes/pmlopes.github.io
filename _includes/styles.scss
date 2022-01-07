@@ -61,7 +61,7 @@ body {
 .site-header {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
   margin: 16px auto 0 auto;
   @include box-sizing(border-box);
   @include respond-to(800) {
