@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>crisp-game-lib</title>
+    <meta
+            name="viewport"
+            content="width=device-width, height=device-height,
+    user-scalable=no, initial-scale=1, maximum-scale=1"
+    />
+
+    <link rel="shortcut icon" type="image/svg" href="icon.svg" />
+    <link rel="manifest" href="manifest.json">
+
+    <script src="scripts/sounds-some-sounds.js"></script>
+    <script src="scripts/gif-capture-canvas.js"></script>
+    <script src="scripts/pixi.min.js"></script>
+    <script src="scripts/pixi-filters.js"></script>
+    <script src="scripts/bundle.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js?v=5');
+        }
+
+        title = "laser climb";
+
+        description = `hold to stretch
+`;
+
+        /** @type {{angle: number, length: number, pin: Vector}} */
+        let cord;
+        /** @type {Vector[]} */
+        let pins;
+        let nextPinDist;
+        const cordlength = 7;
+        characters = [];
+
+        options = {
+            isPlayingBgm: true,
+            isReplayEnabled: true,
+            seed: 100
+        };
+
+        function update() {
+            if (!ticks) {
+                pins = [vec(50, 5)];
+                nextPinDist = 5;
+                cord = { angle:0, length: cordlength, pin: pins[0] };
+            }
+            let scr = difficulty * 0.02;
+            if (cord.pin.y < 80) {
+                scr += (80 - cord.pin.y) * 0.1;
+            }
+            if(input.isJustPressed){
+                play("laser");
+            }
+            if (input . isPressed){
+                cord.length = cord.length + difficulty;
+            } else {
+                cord.length= cord.length+(cordlength - cord.length) * 0.1
+            }
+            cord. angle = cord.angle + difficulty * 0.05;
+            line(cord.pin, vec(cord.pin).addWithAngle(cord.angle, cord.length));
+            if(cord.pin.y>98){
+                play("explosion");
+                end();
+            }
+            let nextPin;
+            remove(pins, (p) => {
+                p.y = p.y + scr;
+                if (box(p, 3).isColliding.rect.black && p !== cord.pin){
+                    nextPin = p;
+                }
+                return p.y > 102;
+            });
+            if (nextPin!= null){
+                play("powerUp");
+                addScore(ceil(cord.pin.distanceTo(nextPin)), nextPin);
+                cord.pin = nextPin
+                cord.length = cordlength
+            }
+            nextPinDist = nextPinDist -scr;
+            while (nextPinDist< 0) {
+                pins.push(vec(rnd(10, 90), -2 - nextPinDist));
+                nextPinDist = nextPinDist + rnd(5, 15);
+            }
+        }
+
+        addEventListener("load", onLoad);
+    </script>
+</head>
+<body style="background: #ddd"></body>
+</html>
