@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Secure Vert.x IDE setup
-date: 2022-11-15 00:00:00 GMT
+date: 2022-09-15 00:00:00 GMT
 ---
 
 I recently had to re-install my laptop and noticed that my IDE stop giving me the hints I was used to get regarding
