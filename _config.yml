@@ -23,9 +23,9 @@ bio: >
   awesome framework.
 
 author_image: "/assets/images/author.jpg"
-twitter_username: pml0pes
+twitter_username: pml0p35
 github_username:  pmlopes
-gplus_username:   PauloLopesX
+mastodon_username:   pmlopes
 
 # Build settings
 markdown: kramdown

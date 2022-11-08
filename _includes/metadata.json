@@ -43,7 +43,7 @@
     "sameAs": [
       "https://twitter.com/{{ site.twitter_username }}",
       "https://github.com/{{ site.github_username }}",
-      "https://plus.google.com/+{{ site.gplus_username }}"
+      "https://mastodon.social/{{ site.mastodon_username }}"
   ]
   },
   "publisher": {

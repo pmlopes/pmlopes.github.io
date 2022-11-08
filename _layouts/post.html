@@ -39,6 +39,12 @@ layout: default
                 {% include icon-twitter.html username=site.twitter_username %}
               {% endif %}
             </span>
+
+            <span>
+              {% if site.mastodon_username %}
+                {% include icon-mastodon.html username=site.mastodon_username %}
+              {% endif %}
+            </span>
           </p>
           <hr>
           <p class="published">Published <time datetime="{{ page.date | date: "%F %R" }}">{{ page.date | date_to_string }}</time></p>
